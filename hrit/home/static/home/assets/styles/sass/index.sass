@@ -1,0 +1,94 @@
+@import base
+@import to_top_button
+@import devices_icon
+@import code_button
+@import service
+
+#left-sidebar
+	background: rgba(255,255,255,0.15)
+
+.menu-item
+	text-transform: none
+
+.for_who_we_works img
+	width: 60px
+	height: 60px
+
+.for_who_we_works .who
+	display: inline-block
+	margin: 5px
+	cursor: pointer
+
+#apresentation
+	.content-wrapper
+		padding: 5% !important
+		p
+			text-shadow: none !important
+		.apresentation-wrapper
+			background-color: rgba(255, 255, 255, 0.2)
+			border: 5px solid #d4d4d4
+			color: black
+			overflow: auto
+			padding: 5%
+
+#main-content
+	text-align: right
+	margin: 20px
+	.section-wrapper
+		.content-wrapper
+			position: relative !important
+			.header
+				background-color: rgba(255,255,255,0.4)
+				background-image: url("../images/background/4.png")
+				color: black
+				overflow: auto
+				padding: 40px
+				.content
+					float: left
+					@media (min-width: 768px)
+						margin-left: 24%
+						width: 46%
+					@media (min-width: 992px)
+						margin-left: 26%
+						width: 44%
+					@media (max-width: 768px)
+						width: 100%
+						float: none
+				.logo
+					width: 27%
+					float: right
+					padding: 10px
+					border: solid rgba(255, 255, 255, .5)
+					box-shadow: 0 0 10px 5px rgba(0, 0, 0, .4)
+					background-color: white
+					img
+						max-width: 100%
+						height: auto
+					@media (max-width: 768px)
+						float: none
+						margin-left: 36.5%
+						margin-right: 36.5%
+				h2
+					font-family: Segoe UI,Arial,sans-serif !important
+					width: 100%
+					overflow: auto
+	@media (min-width: 768px)
+		margin: 0 3% 0 24%
+		.section-wrapper
+			height: auto
+			width: 100%
+			.content-wrapper
+				display: initial
+	@media (max-width: 768px)
+		#services-button, #works-button, #integrantes-button
+			display: none
+	@media (min-width: 992px)
+		margin: 0 6.5% 0 26%
+	@media (min-width: 992px) and (min-width: 1200px)
+		.section-wrapper
+			height: 100vh
+			display: table
+			width: 100%
+			.content-wrapper
+				display: table-cell
+				vertical-align: middle

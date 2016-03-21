@@ -1,0 +1,335 @@
+{% load staticfiles %}
+{% load django_markdown %}
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Homerunit</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"></link>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- vegas bg -->
+  <!-- <link href="assets/styles/jquery.vegas.min.css"  rel="stylesheet" type="text/css"/> -->
+
+  <!-- owl carousel css -->
+  <!-- <link href="assets/styles/owl.carousel.css" rel="stylesheet"> -->
+  <link href="{% static "home/assets/styles/owl.carousel.css" %}" rel="stylesheet"/>
+  <!-- <link href="assets/styles/owl.theme.css" rel="stylesheet"> -->
+  <link href="{% static "home/assets/styles/owl.theme.css" %}" rel="stylesheet"/>
+  <!-- <link href="assets/styles/owl.transitions.css" rel="stylesheet"> -->
+  <link href="{% static "home/assets/styles/owl.transitions.css" %}" rel="stylesheet"/>
+
+  <!-- intro animations -->
+  <!-- <link href="assets/styles/animate.css" rel="stylesheet"> -->
+
+  <!-- lightbox -->
+  <!-- <link href="assets/styles/lightbox.css" rel="stylesheet"> -->
+
+  <!-- styles for this template -->
+  <!-- <link href="assets/styles/style.css" rel="stylesheet"> -->
+  <link href="{% static "home/assets/styles/style.css" %}" rel="stylesheet"/>
+
+  <!-- <link rel="stylesheet" href="assets/styles/wheel/sunpeach.css" media="screen" /> -->
+  <!-- <link href="assets/styles/index.css" rel="stylesheet"/> -->
+  <link href="{% static "home/assets/styles/index.css" %}" rel="stylesheet"/>
+
+</head>
+
+<body>
+  <!------------------------------------------------------------------------------------------------------------------------------------------------->
+  <!-- Outer Container ------------------------------------------------------------------------------------------------------------------------------>
+  <div id="outer-container">
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Left Sidebar ------------------------------------------------------------------------------------------------------------------------------>
+    <section id="left-sidebar">
+      <!-- Logo -->
+      <div id="sidebar-logo" class="logo">
+        <a href="#apresentation" class="link-scroll">
+          <img src="{% static "home/assets/images/logo.png" %}" alt="Homurunit">
+        </a>
+      </div>
+      <!-- Menu Icon for smaller viewports -->
+      <div id="mobile-menu-icon" class="visible-xs" onClick="toggle_main_menu();"><span class="glyphicon glyphicon-th"></span></div>
+      <ul id="main-menu">
+        <li id="menu-item-services" class="menu-item scroll"><a href="#services">Serviços</a></li>
+        <li id="menu-item-works" class="menu-item scroll"><a href="#works">Trabalhos Desenvolvidos</a></li>
+        <li id="menu-item-about" class="menu-item scroll"><a href="#about">Sobre nós</a></li>
+        <li id="menu-item-integrantes" class="menu-item scroll"><a href="#integrantes">Integrantes</a></li>
+        <li id="menu-item-contato" class="menu-item scroll"><a href="#contato">Contato</a></li>
+      </ul>
+    </section>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Main Content ------------------------------------------------------------------------------------------------------------------------------>
+	  <section id="main-content" class="">
+
+      <!---------------------------------------------------------------------------------------------------------------------------------------------->
+      <!-- APRESENTATION ------------------------------------------------------------------------------------------------------------------------------>
+      <article id="apresentation" class="section-wrapper" data-custom-background-img="{% static "home/assets/images/background/1.jpg" %}">
+        <div class="content-wrapper">
+          <div class="service-wrapper">
+            <div class="header">
+              <div class="content">
+                <p>{{ content.apresentation|markdown }}</p>
+              </div>
+              <div class="logo">
+                <img src="{% static "home/assets/images/logo_nameless.png" %}" alt="" />
+              </div>
+              <h2 style="font-family: Segoe UI,Arial,sans-serif;">Home Run IT</h2>
+            </div>
+            <p><a href="#services" class="link-scroll btn btn-outline-inverse btn-lg">O que fazemos?</a></p>
+          </div>
+        </div>
+      </article>
+
+      <!---------------------------------------------------------------------------------------------------------------------------------------------->
+      <!-- SERVICES ------------------------------------------------------------------------------------------------------------------------------>
+      <article id="services" class="section-wrapper " data-custom-background-img="{% static "home/assets/images/background/0.jpg" %}">
+        <div class="content-wrapper">
+          <div class="service-wrapper">
+
+            <div class="service-col">
+              <div class="title">
+                <div class="image-wrapper">
+                  <img src="{% static "home/assets/images/computer.png" %}" alt="" />
+                </div>
+                <h5>{{services.0.name}}</h5>
+              </div>
+              <div class="content">
+                <p>{{services.0.description|markdown}}</p>
+              </div>
+            </div>
+
+            <div class="service-col">
+              <div>
+                <div class="image-wrapper">
+                  <img src="{% static "home/assets/images/cellphone.png" %}" alt="" />
+                </div>
+                <h5>{{services.1.name}}</h5>
+              </div>
+              <div class="">
+                <p>{{services.1.description|markdown}}</p>
+              </div>
+            </div>
+
+            <div class="service-col">
+              <div class="">
+                <div class="image-wrapper">
+                  <img src="{% static "home/assets/images/spanner.png" %}" alt="" />
+                </div>
+                <h5>{{services.2.name}}</h5>
+              </div>
+              <div class="">
+                <p>{{services.2.name|markdown}}</p>
+              </div>
+            </div>
+
+          </div>
+          <p>
+            <a id="works-button" href="#works" class="link-scroll btn btn-outline-inverse btn-lg">Trabalhos realizados</a>
+          </p>
+        </div>
+      </article>
+
+      <!------------------------------------------------------------------------------------------------------------------------------------------------->
+      <!-- WORKS ------------------------------------------------------------------------------------------------------------------------------>
+      <article id="works" class="section-wrapper " data-custom-background-img="{% static "home/assets/images/background/0.jpg" %}">
+        <div class="content-wrapper ">
+          <div id="features-carousel" class="carousel slide with-title-indicators max-height" data-ride="carousel">
+            <!-- Indicators - slide navigation -->
+            <ol class="carousel-indicators title-indicators">
+              <li data-target="#features-carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#features-carousel" data-slide-to="1"></li>
+              <li data-target="#features-carousel" data-slide-to="2"></li>
+              <li data-target="#features-carousel" data-slide-to="3"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+
+              {% for work in works %}
+              <div class="item active">
+                <div class="carousel-text-content">
+                  <img src={{work.image.url}} class="icon" alt="Lorem Ipsum">
+                  <h2 class="title">{{work.name}}</h2>
+                  <p>{{work.synopsis}}</p>
+                  <p>
+                    <a href="" onclick="populate_and_open_modal(event, 'modal-content-0{{work.id}}');" class="btn btn-outline-inverse btn-sm">Saiba Mais</a>
+                  </p>
+                  <div class="content-to-populate-in-modal" id='modal-content-0{{work.id}}'>
+                    <h1>{{work.name}}</h1>
+                    <p>
+                      <img data-img-src="{{work.image.url}}" class="lazy rounded_border hover_effect pull-left" alt="Lorem Ipsum">
+                      {{work.description|markdown}}
+                    </p>
+                    <a href="{{work.link}}">link para o site</a>
+                  </div><!-- #modal-content-4 -->
+                </div>
+              </div><!-- .item -->
+              {% endfor %}
+
+            </div><!-- .carousel-inner -->
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#features-carousel" data-slide="prev"></a>
+            <a class="right carousel-control" href="#features-carousel" data-slide="next"></a>
+
+          </div><!-- #about-carousel -->
+        </div><!-- .content-wrapper -->
+      </article><!-- .section-wrapper -->
+
+      <!---------------------------------------------------------------------------------------------------------------------------------------------->
+      <!-- ABOUT ------------------------------------------------------------------------------------------------------------------------------>
+      <article id="about" class="section-wrapper " data-custom-background-img="{% static "home/assets/images/background/0.jpg" %}">
+        <div class="content-wrapper ">
+          <div>
+            <h1 class="section-title">Sobre Nós</h1>
+            <p class="feature-paragraph">
+              <img data-img-src="{% static "home/assets/images/logo.png" %}" class="lazy pull-right" alt="Lorem Ipsum">
+              {{content.about|markdown}}
+            </p>
+            <p>
+              <a id="integrantes-button" href="#integrantes" class="link-scroll btn btn-outline-inverse btn-lg">Integrantes</a>
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!---------------------------------------------------------------------------------------------------------------------------------------------->
+      <!-- MENBERS ------------------------------------------------------------------------------------------------------------------------------>
+      <article id="integrantes" class="section-wrapper"  data-custom-background-img="{% static "home/assets/images/background/0.jpg" %}">
+        <div class="content-wrapper ">
+          <div>
+            <h1 class="section-title">Integrantes</h1>
+            <section class="feature-columns row ">
+
+              {% for member in members %}
+              <article class="feature-col col-md-4">
+                <a href="" onclick="populate_and_open_modal(event, 'modal-content-1{{member.id}}');" class="thumbnail linked">
+                  <div class="image-container">
+                    <img data-img-src="{{ member.image.url }}" class="lazy item-thumbnail" alt="Lorem Ipsum">
+                  </div>
+                  <div class="caption">
+                    <h5>{{ member.name }}</h5>
+                    <p>{{ member.apresentation|markdown }}</p>
+                  </div><!-- .caption -->
+                </a><!-- .thumbnail -->
+                <div class="content-to-populate-in-modal" id="modal-content-1{{member.id}}">
+                  <img data-img-src="{{ member.image.url }}" class="lazy " alt="Lorem Ipsum">
+                  <h5>{{ member.name }}</h5>
+                  <p>{{ member.apresentation|markdown }}</p>
+                  <p>{{ member.description|markdown }}</p>
+                </div><!-- #modal-content-2 -->
+              </article>
+              {% endfor %}
+
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!------------------------------------------------------------------------------------------------------------------------------------------------->
+      <!-- CONTACT ------------------------------------------------------------------------------------------------------------------------------>
+      <article id="contato" class="section-wrapper " data-custom-background-img="{% static "home/assets/images/background/0.jpg" %}">
+        <div class="content-wrapper ">
+          <h1 class="section-title">Contato</h1>
+          <div class="">
+            <form class="form-style validate-form " role="form">
+
+              <!-- form left col -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="text-field form-control validate-field required" data-validation-type="string" id="form-name" placeholder="Nome" name="name">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="text-field form-control validate-field required" data-validation-type="email" id="form-email" placeholder="Seu e-mail" name="email">
+                </div>
+              </div><!-- end: form left col -->
+
+              <!-- form right col -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <textarea placeholder="Messagem..." class="form-control validate-field required" name="message"></textarea>
+                </div>
+                <div class="form-group">
+                  <img src="http://stephenmuscat.com/twilli_air/1.3.0/assets/images/theme_images/loader-form.GIF" class="form-loader">
+                  <button type="submit" class="btn btn-sm btn-outline-inverse">Enviar</button>
+                </div>
+                <div class="form-group form-general-error-container"></div>
+              </div><!-- end: form right col -->
+
+            </form>
+          </div><!-- end: CONTACT FORM -->
+
+        </div><!-- .content-wrapper -->
+      </article><!-- .section-wrapper -->
+
+    </section><!-- #main-content -->
+
+    <!-- Footer -->
+    <section id="footer">
+
+      <!-- GO TO TOP -->
+      <div class="to_top_button" id="go-to-top" onclick="scroll_to_top();">
+        <i class="top"></i>
+      </div>
+
+      <ul class="social-icons">
+        <li><a href="#" target="_blank" title="Facebook"><img src="http://stephenmuscat.com/twilli_air/1.3.0/assets/images/theme_images/social_icons/facebook.png" alt="Facebook"></a></li>
+        <li><a href="#" target="_blank" title="Twitter"><img src="http://stephenmuscat.com/twilli_air/1.3.0/assets/images/theme_images/social_icons/twitter.png" alt="Twitter"></a></li>
+        <li><a href="#" target="_blank" title="Google+"><img src="http://stephenmuscat.com/twilli_air/1.3.0/assets/images/theme_images/social_icons/googleplus.png" alt="Google+"></a></li>
+      </ul>
+
+      <!-- copyright text -->
+      <div class="footer-text-line">&copy; 2015 HomeRunIT</div>
+    </section>
+
+  </div><!-- #outer-container -->
+
+  <!-- DO NOT MOVE, EDIT OR REMOVE - this is needed in order for popup content to be populated in it -->  <div class="modal fade" id="common-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <div class="modal-body ">
+      </div><!-- .modal-body -->
+    </div><!-- .modal-content -->
+  </div><!-- .modal-dialog -->
+
+  <!-- Jquery and Bootstrap JS -->
+  <script src="{% static "home/assets/scripts/bootstrap/jquery.min.js" %}"></script>
+  <script>window.jQuery || document.write('<script src="http://stephenmuscat.com/twilli_air/1.3.0/assets/js/jquery-1.11.2.min.js"><\/script>')</script>
+  <script src="http://stephenmuscat.com/twilli_air/1.3.0/assets/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{% static "home/assets/scripts/script.js" %}"></script>
+
+  <!-- Easing - for transitions and effects -->
+  <script src="http://stephenmuscat.com/twilli_air/1.3.0/assets/js/jquery.easing.1.3.js"></script>
+
+  <!-- background image strech script -->
+  <script src="http://stephenmuscat.com/twilli_air/1.3.0/assets/js/vegas/jquery.vegas.min.js"></script>
+
+  <!-- detect mobile browsers -->
+  <script src="http://stephenmuscat.com/twilli_air/1.3.0/assets/js/detectmobilebrowser.js"></script>
+
+  <!-- detect scrolling -->
+  <script src="http://stephenmuscat.com/twilli_air/1.3.0/assets/js/jquery.scrollstop.min.js"></script>
+
+  <!-- owl carousel js -->
+  <script src="http://stephenmuscat.com/twilli_air/1.3.0/assets/js/owl-carousel/owl.carousel.min.js"></script>
+
+  <!-- lightbox js -->
+  <script src="http://stephenmuscat.com/twilli_air/1.3.0/assets/js/lightbox/js/lightbox.min.js"></script>
+
+  <!-- intro animations -->
+  <script src="http://stephenmuscat.com/twilli_air/1.3.0/assets/js/wow/wow.min.js"></script>
+
+  <!-- responsive videos -->
+  <script src="http://stephenmuscat.com/twilli_air/1.3.0/assets/js/jquery.fitvids.js"></script>
+
+  <!-- Custom functions for this theme -->
+  <script src="http://stephenmuscat.com/twilli_air/1.3.0/assets/js/functions.min.js"></script>
+  <script src="http://stephenmuscat.com/twilli_air/1.3.0/assets/js/initialise-functions.js"></script>
+
+</body>
+</html>

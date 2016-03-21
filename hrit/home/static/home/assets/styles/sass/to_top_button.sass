@@ -1,0 +1,38 @@
+.to_top_button i
+  position: relative
+  display: inline-block
+  vertical-align: middle
+  cursor: pointer
+  backface-visibility: hidden
+  &:before, &:after
+    content: ""
+    display: block
+    position: absolute
+    border-radius: 100px
+    background: #fff
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2)
+    transition: all 100ms ease-in-out
+  &:before
+    transform: rotate(-50deg)
+  &:after
+    transform: rotate(50deg)
+  &.top
+    width: 80px
+    height: 45px
+    &:before, &:after
+      height: 45px
+      width: 2px
+      top: 0
+      left: 50%
+    &:before, &:after
+      transform-origin: 50% 0%
+  &:hover
+    &:before
+      transform: rotate(-40deg)
+    &:after
+      transform: rotate(40deg)
+  &:active
+    &:before
+      transform: rotate(-30deg)
+    &:after
+      transform: rotate(30deg)

@@ -1,0 +1,9 @@
+cd Documents/web-development/hrit/site/hrit/
+
+python manage.py runserver
+python manage.py migrate
+python manage.py makemigrations app_name
+
+
+SASS
+cd Documents/web-development/hrit/site/hrit/home/static/home/assets/styles/sass/
